@@ -40,5 +40,6 @@ RUN sed -ri 's!/var/www/html!/var/www/html/public!g' \
     && chmod +x /usr/local/bin/clinic-entrypoint
 
 EXPOSE 80
-ENTRYPOINT ["clinic-entrypoint"]
+ENTRYPOINT ["/bin/sh", "/usr/local/bin/clinic-entrypoint"]
 CMD ["apache2-foreground"]
+
